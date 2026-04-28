@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 280px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0f0f0f;
+      color: #e8e8e8;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 11px;
+      text-align: center;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      background: #1a1a1a;
+      color: #ccc;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn:hover { background: #252525; border-color: #555; }
+    .btn.active { border-color: #3ea6ff; color: #fff; background: #162d50; }
+    .btn .icon { font-size: 18px; }
+    .btn .label { flex: 1; text-align: left; }
+    .btn .check { opacity: 0; font-size: 14px; color: #3ea6ff; transition: opacity 0.15s; }
+    .btn.active .check { opacity: 1; }
+    .off-btn {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+      background: #2a2a2a;
+      color: #888;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .off-btn:hover { background: #333; color: #bbb; }
+    .status {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+    .status span { color: #3ea6ff; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>📚 YouTube Study Mode</h1>
+  <p class="subtitle">Eliminate distractions. Stay focused.</p>
+
+  <button class="btn" data-mode="study">
+    <span class="icon">🎯</span>
+    <span class="label">Study Mode</span>
+    <span class="check">✓</span>
+  </button>
+
+  <button class="btn" data-mode="playlist">
+    <span class="icon">📋</span>
+    <span class="label">Playlist Mode</span>
+    <span class="check">✓</span>
+  </button>
+
+  <button class="btn" data-mode="combined">
+    <span class="icon">⚡</span>
+    <span class="label">Combined Mode</span>
+    <span class="check">✓</span>
+  </button>
+
+  <button class="off-btn" id="offBtn">Turn Off</button>
+
+  <p class="status">Current: <span id="currentMode">Off</span></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
